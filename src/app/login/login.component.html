@@ -1,0 +1,49 @@
+<main class="form-signin w-100 m-auto">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <img class="mb-4" src="/src/assets/images/pintucor-logo.png" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+      <label for="floatingInput">Email</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me">  Recuérdame
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!loginForm.valid">Iniciar Sesión</button>
+  </form>
+</main>
+
+
+<!-- <mat-card>
+    <mat-card-title>Inicio de sesion</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <p>
+                <mat-form-field>
+                    <input type="text" formControlName="email" matInput placeholder="Email">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="password" formControlName="password" matInput placeholder="Password">
+                </mat-form-field>
+            </p>
+                <div>
+                    <button type="submit" [disabled]="!loginForm.valid" mat-raised-button>Iniciar sesion</button>
+                </div>
+        </form>
+    </mat-card-content>
+</mat-card> -->
+
+
+
+
+    <!-- Custom styles for this template -->
