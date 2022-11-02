@@ -1,5 +1,9 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Cliente } from 'src/app/models/cliente';
 import { ApiclienteService } from 'src/app/services/apicliente.service';
@@ -14,6 +18,7 @@ export class DialogClienteComponent {
   constructor(
     public dialogRef: MatDialogRef<DialogClienteComponent>,
     public apiCliente: ApiclienteService,
+
     public snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public cliente: Cliente
   ) {
@@ -21,13 +26,15 @@ export class DialogClienteComponent {
       this.nombre = cliente.nombre;
     }
   }
+    public snackBar: MatSnackBar
+  ) {}
 
   close() {
     this.dialogRef.close();
   }
 
   add() {
-    const cliente: Cliente = { nombre: this.nombre, id: 0 };
+    const cliente: Cliente = { nombre: this.nombre };
 
     this.apiCliente.addCliente(cliente).subscribe((response) => {
       if (response.exito === 1) {
@@ -52,3 +59,4 @@ export class DialogClienteComponent {
     });
    }
 }
+};

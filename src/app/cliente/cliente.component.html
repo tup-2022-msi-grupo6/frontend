@@ -20,7 +20,7 @@
                 <button mat-raised-button color="warn" (click)="deleteCliente(element)">Eliminar</button>
             </td>
         </ng-container>
-
+        
         <tr mat-header-row *matHeaderRowDef="columnas"></tr>
         <tr mat-row *matRowDef="let row; columns: columnas"></tr>
     </table>

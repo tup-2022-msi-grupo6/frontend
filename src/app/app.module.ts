@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { DialogClienteComponent } from './cliente/dialog/dialogCliente.component';
+
 import { DialogDeleteComponent } from './common/delete/dialogDelete.component';
 import { MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './home/home.component';
@@ -17,9 +18,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './security/jwt.interceptor';
+
 
 
 @NgModule({
@@ -27,9 +30,11 @@ import { JwtInterceptor } from './security/jwt.interceptor';
     AppComponent,
     HomeComponent,
     ClienteComponent,
+
     DialogClienteComponent,
     DialogDeleteComponent,
     LoginComponent
+
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ import { JwtInterceptor } from './security/jwt.interceptor';
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

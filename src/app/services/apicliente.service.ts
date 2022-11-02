@@ -37,5 +37,4 @@ export class ApiclienteService {
   eliminar (id: number) : Observable<Response> {
     return this._http.delete<Response>(`${this.URL}/${id}`);
   }
-
 }
