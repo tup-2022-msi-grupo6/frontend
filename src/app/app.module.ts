@@ -22,6 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './security/jwt.interceptor';
+import { StockComponent } from './stock/stock.component';
 
 
 
@@ -33,7 +34,8 @@ import { JwtInterceptor } from './security/jwt.interceptor';
 
     DialogClienteComponent,
     DialogDeleteComponent,
-    LoginComponent
+    LoginComponent,
+    StockComponent
 
   ],
   imports: [
