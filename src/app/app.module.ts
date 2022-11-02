@@ -9,14 +9,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { DialogClienteComponent } from './cliente/dialog/dialogCliente.component';
 
+import { DialogDeleteComponent } from './common/delete/dialogDelete.component';
+import { MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './home/home.component';
 import { ClienteComponent } from './cliente/cliente.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { JwtInterceptor } from './security/jwt.interceptor';
+
 
 
 @NgModule({
@@ -24,7 +30,11 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HomeComponent,
     ClienteComponent,
-    DialogClienteComponent
+
+    DialogClienteComponent,
+    DialogDeleteComponent,
+    LoginComponent
+
   ],
   imports: [
     BrowserModule,
@@ -38,9 +48,14 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatSnackBarModule,
     MatFormFieldModule,
-    FormsModule
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

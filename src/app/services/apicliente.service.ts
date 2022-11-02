@@ -30,4 +30,11 @@ export class ApiclienteService {
     return this._http.post<Response>(this.URL, cliente, httpOption);
   }
 
+  editar (cliente: Cliente) : Observable<Response> {
+    return this._http.put<Response>(this.URL, cliente, httpOption);
+  }
+  
+  eliminar (id: number) : Observable<Response> {
+    return this._http.delete<Response>(`${this.URL}/${id}`);
+  }
 }
