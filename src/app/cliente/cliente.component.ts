@@ -69,7 +69,7 @@ export class ClienteComponent implements OnInit {
     })
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.apiCliente.eliminar(cliente.id).subscribe(response => {
+        this.apiCliente.eliminar(cliente.idCliente).subscribe(response => {
           if (response.exito === 1) {
             this.getClientes();       
           }

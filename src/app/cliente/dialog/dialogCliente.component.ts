@@ -1,9 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
-
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Cliente } from 'src/app/models/cliente';
 import { ApiclienteService } from 'src/app/services/apicliente.service';
@@ -26,15 +23,13 @@ export class DialogClienteComponent {
       this.nombre = cliente.nombre;
     }
   }
-    public snackBar: MatSnackBar
-  ) {}
 
   close() {
     this.dialogRef.close();
   }
 
   add() {
-    const cliente: Cliente = { nombre: this.nombre };
+    const cliente: Cliente = { nombre: this.nombre, idCliente: 0 };
 
     this.apiCliente.addCliente(cliente).subscribe((response) => {
       if (response.exito === 1) {
@@ -47,7 +42,7 @@ export class DialogClienteComponent {
    }
 
    editCliente() {
-    const cliente: Cliente = { nombre: this.nombre, id: this.cliente.id };
+    const cliente: Cliente = { nombre: this.nombre, idCliente: this.cliente.idCliente };
 
     this.apiCliente.editar(cliente).subscribe((response) => {
       if (response.exito === 1) {
@@ -58,5 +53,4 @@ export class DialogClienteComponent {
         }
     });
    }
-}
-};
+  }
