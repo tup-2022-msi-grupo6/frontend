@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { DialogClienteComponent } from './cliente/dialog/dialogCliente.component';
+import { DialogStockComponent } from './stock/dialog/dialogStock.component';
 
 import { DialogDeleteComponent } from './common/delete/dialogDelete.component';
 import { MatCardModule} from '@angular/material/card';
@@ -26,6 +27,7 @@ import { StockComponent } from './stock/stock.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,7 @@ import { StockComponent } from './stock/stock.component';
 
     DialogClienteComponent,
     DialogDeleteComponent,
+    DialogStockComponent,
     LoginComponent,
     StockComponent
 

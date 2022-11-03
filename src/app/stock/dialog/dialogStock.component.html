@@ -1,0 +1,90 @@
+<h1 mat-dialog-title>{{ stock != null ? 'Editar producto' : 'Nuevo producto' }}</h1>
+
+
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Tipo Producto</mat-label>
+        <input matInput type="text" [(ngModel)]="tipo_producto">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Descripcion</mat-label>
+        <input matInput type="text" [(ngModel)]="descripcion">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Tipo Pintura</mat-label>
+        <select matNativeControl required [(ngModel)]="id_tipo_pintura">
+            <option [ngValue]=1>Fibrado</option>
+            <option [ngValue]=42>Barniz</option>
+            <option [ngValue]=43>Decorativo</option>
+            <option [ngValue]=44>Alta temperatura</option>
+            <option [ngValue]=45>Esmalte base agua</option>
+            <option [ngValue]=46>Caucho clorado</option>
+            <option [ngValue]=47>Interior/Exterior</option>
+            <option [ngValue]=48>Esmalte base agua</option>
+            <option [ngValue]=49>Otro(Complemento)</option>
+        </select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Marca</mat-label>
+        <select matNativeControl required [(ngModel)]="id_marca">
+            <option [ngValue]=1>Sherwin Williams</option>
+            <option [ngValue]=2>Tersuave</option>
+            <option [ngValue]=3>Alba</option>
+            <option [ngValue]=4>Sinteplast</option>
+        </select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Color</mat-label>
+        <select matNativeControl required [(ngModel)]="id_color">
+            <option [ngValue]=1>Blanco</option>
+            <option [ngValue]=2>Negro</option>
+            <option [ngValue]=3>Gris</option>
+            <option [ngValue]=4>Amarillo</option>
+            <option [ngValue]=5>Naranja</option>
+            <option [ngValue]=6>Rojo</option>
+            <option [ngValue]=7>Violeta</option>
+            <option [ngValue]=8>Azul</option>
+            <option [ngValue]=9>Verde</option>
+            <option [ngValue]=0>Marrón</option>
+        </select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Acabado</mat-label>
+        <input matInput type="text" [(ngModel)]="acabado">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Tamaño</mat-label>
+        <input matInput type="number" [(ngModel)]="tamano">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Precio</mat-label>
+        <input matInput type="number" [(ngModel)]="precio">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Sector</mat-label>
+        <select matNativeControl required [(ngModel)]="id_sector">
+            <option [ngValue]=1>Sector: A / Estante: 1 / Fila: 1</option>
+            <option [ngValue]=2>Sector: A / Estante: 1 / Fila: 2</option>
+            <option [ngValue]=3>Sector: A / Estante: 1 / Fila: 3</option>
+            <option [ngValue]=4>Sector: A / Estante: 1 / Fila: 4</option>
+            <option [ngValue]=5>Sector: B / Estante: 2 / Fila: 1</option>
+            <option [ngValue]=6>Sector: B / Estante: 2 / Fila: 2</option>
+            <option [ngValue]=7>Sector: B / Estante: 2 / Fila: 3</option>
+            <option [ngValue]=8>Sector: B / Estante: 2 / Fila: 4</option>
+        </select>
+    </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="secondary" (click)="close()">Cancelar</button>
+    <button mat-raised-button color="primary"
+    (click)="stock != null ? editProducto() : addProducto()">Guardar</button>
+</div>
