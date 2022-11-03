@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>{{ usuarioABM != null ? 'Editar usuario' : 'Nuevo usuario' }}</h1>
+
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input required matInput type="email" [(ngModel)]="Email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input required matInput type="password" [(ngModel)]="Password">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" [(ngModel)]="Nombre">
+    </mat-form-field>
+
+   
+        <mat-form-field>
+            <mat-label>Rol</mat-label>
+            <select matNativeControl required [(ngModel)]="IdRol">
+                <option [ngValue]=2>Caja</option>
+                <option [ngValue]=3>Stock</option>
+            </select>
+        </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="secondary" (click)="close()">Cancelar</button>
+    <button mat-raised-button color="primary" 
+    (click)="usuarioABM != null ? editUsuario() : add()">Guardar</button>
+</div>
