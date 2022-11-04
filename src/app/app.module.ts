@@ -22,11 +22,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './security/jwt.interceptor';
-<<<<<<< Updated upstream
-=======
 import { UsuarioComponent } from './usuario/usuario.component';
 import { DialogUserComponent } from './usuario/dialog/dialogUser.component';
->>>>>>> Stashed changes
 
 
 
@@ -35,18 +32,11 @@ import { DialogUserComponent } from './usuario/dialog/dialogUser.component';
     AppComponent,
     HomeComponent,
     ClienteComponent,
-<<<<<<< Updated upstream
-
-    DialogClienteComponent,
-    DialogDeleteComponent,
-    LoginComponent
-=======
     DialogUserComponent,
     DialogClienteComponent,
     DialogDeleteComponent,
     LoginComponent,
     UsuarioComponent
->>>>>>> Stashed changes
 
   ],
   imports: [
@@ -64,17 +54,10 @@ import { DialogUserComponent } from './usuario/dialog/dialogUser.component';
     MatCardModule,
     FormsModule,
     ReactiveFormsModule
-<<<<<<< Updated upstream
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
-=======
-  ],
-  providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
-  ],
->>>>>>> Stashed changes
 
   bootstrap: [AppComponent]
 })
