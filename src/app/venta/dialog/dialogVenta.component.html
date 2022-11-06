@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Nueva venta</h1>
+
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Cliente</mat-label>
+        <input matInput [(ngModel)]="venta.id_cliente">
+    </mat-form-field>
+    <form [formGroup]="detalleForm" (ngSubmit)="addDetalle()">
+        <mat-form-field>
+            <mat-label>Producto</mat-label>
+            <input type="text" formControlName="codigo_producto" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Cantidad</mat-label>
+            <input type="text" formControlName="cantidad" matInput placeholder="Cantidad">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Importe</mat-label>
+            <input type="text" formControlName="importe_bruto" matInput placeholder="Importe">
+        </mat-form-field>
+        <div>
+            <button type="submit" [disabled]="!detalleForm.valid" mat-raised-button>+</button>
+        </div>
+    </form>
+    <div>
+        <h5>Conceptos</h5>
+        <table style="width: 100%">
+            <tr>
+                <th>Cantidad</th>
+                <th>Importe</th>
+            </tr>
+            <tr *ngFor="let item of detalle_venta">
+                <td>{{item.cantidad}}</td>
+                <td>{{item.importe_bruto}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="addVenta()">Realizar venta</button>
+</div>
