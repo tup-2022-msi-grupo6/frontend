@@ -1,0 +1,21 @@
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+       <li class="nav-item"> <a class="nav-link " routerLink="/home/dashboard"> <i class="bi bi-grid"></i> <span>Principal</span> </a></li>
+       <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i><span>Gestiones</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+             <li> <a routerLink="/home/cliente"> <i class="bi bi-circle"></i><span>Clientes</span> </a></li>
+             <li> <a routerLink="/home/ventas"> <i class="bi bi-circle"></i><span>Ventas</span> </a></li>
+             <li> <a routerLink="/home/stock"> <i class="bi bi-circle"></i><span>Stock</span> </a></li>
+             <li> <a routerLink="/home/productos"> <i class="bi bi-circle"></i><span>Productos</span> </a></li>
+          </ul>
+       </li>
+       <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-bar-chart"></i><span>Reportes</span><i class="bi bi-chevron-down ms-auto"></i> </a>
+          <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li> <a routerLink="/home/reporteventas"> <i class="bi bi-circle"></i><span>Reporte de ventas</span> </a></li>
+          </ul>
+       </li>
+
+    </ul>
+ </aside>

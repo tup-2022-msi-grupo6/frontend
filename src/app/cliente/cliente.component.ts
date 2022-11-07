@@ -7,8 +7,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Cliente } from '../models/cliente';
 import { DialogDeleteComponent } from '../common/delete/dialogDelete.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ImpresionService } from '../services/impresion.service';
 
+import { ImpresionService } from '../services/impresion.service';
 
 
 @Component({
@@ -20,6 +20,7 @@ export class ClienteComponent implements OnInit {
 
   public lst: any[];
   public cuerpo: any[];
+
 
   public columnas: string[] = ['id','nombre', 'actions'];
   readonly width: string = '300px';
@@ -50,6 +51,7 @@ export class ClienteComponent implements OnInit {
 
       width : this.width
 
+
     })
     dialogRef.afterClosed().subscribe(result => {
       this.getClientes();
@@ -66,6 +68,7 @@ export class ClienteComponent implements OnInit {
       this.getClientes();
     });
   }
+
 
   deleteCliente(cliente: Cliente) {
     const dialogRef = this.dialog.open(DialogDeleteComponent, {

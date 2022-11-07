@@ -20,9 +20,27 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatNativeDateModule } from '@angular/material/core';
+
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './security/jwt.interceptor';
+
+
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FooterComponent } from './layouts/footer/footer.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { SidebarComponent } from './layouts/sidebar/sidebar.component';
+import { ReporteVentasComponent } from './reportes/reporte-ventas/reporte-ventas.component';
+import { CantidadesComponent } from './reportes/reporte-ventas/cantidades/cantidades.component';
+import { PreciosComponent } from './reportes/reporte-ventas/precios/precios.component';
+import { PieTopSellersComponent } from './reportes/reporte-ventas/precios/pie-top-sellers/pie-top-sellers.component';
+import { PieTopSellersYComponent } from './reportes/reporte-ventas/precios/pie-top-sellers-y/pie-top-sellers-y.component';
+
+import { VentasService } from './services/reportesServices/ventas.service';
+import { NgChartsModule } from "ng2-charts";
 
 import { StockComponent } from './stock/stock.component';
 
@@ -38,11 +56,22 @@ import { DialogVentaComponent } from './venta/dialog/dialogVenta.component';
     ClienteComponent,
     DialogClienteComponent,
     DialogDeleteComponent,
+    LoginComponent,
+    DashboardComponent,
+    FooterComponent,
+    HeaderComponent,
+    SidebarComponent,
+    ReporteVentasComponent,
+    CantidadesComponent,
+    PreciosComponent,
+    PieTopSellersComponent,
+    PieTopSellersYComponent
     DialogStockComponent,
     LoginComponent,
     StockComponent,
     DialogVentaComponent,
     VentaComponent
+
 
 
   ],
@@ -60,10 +89,16 @@ import { DialogVentaComponent } from './venta/dialog/dialogVenta.component';
     MatFormFieldModule,
     MatCardModule,
     FormsModule,
-    ReactiveFormsModule
+
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgChartsModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, VentasService,
+
+    ReactiveFormsModule
   ],
 
   bootstrap: [AppComponent]

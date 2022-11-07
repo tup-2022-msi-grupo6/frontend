@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Usuario } from './models/usuario';
 import { ApiAuthService } from './services/apiauth.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,16 +12,13 @@ import { ApiAuthService } from './services/apiauth.service';
 export class AppComponent {
   title = 'venta-real';
 
-  usuario: Usuario;
+  constructor(private elementRef: ElementRef,  public  _router: Router) { }
 
-  constructor(public apiauthService: ApiAuthService, private router: Router) {
-      this.apiauthService.usuario.subscribe(res => {
-        this.usuario = res;
-      })
-  }
+  ngOnInit() {
 
-  logout() {
-    this.apiauthService.logout();
-    this.router.navigate(['/login']);
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.src = "../assets/js/main.js";
+    this.elementRef.nativeElement.appendChild(s);
   }
 }

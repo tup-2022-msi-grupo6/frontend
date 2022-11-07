@@ -1,0 +1,42 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Clientes</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/home/dashboard">Principal</a></li>
+                <li class="breadcrumb-item active">Reportes de ventas</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <br>
+                <div class="card">
+                    <div class="card-body">
+
+                        <!-- Agregar html aca -->
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2 class="card-title">Reportes de ventas</h2>
+                            </div>
+                            <div class="col-sm-6 py-4 d-flex justify-content-end">
+                                <button id="btnSwitch" class="btn btn-primary float-right" (click)="switch($event)">Ingresos ($)</button>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+
+                            <router-outlet></router-outlet>
+                            
+                        </div>
+
+                        <!-- Hasta aca -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
