@@ -22,7 +22,7 @@ export class ClienteComponent implements OnInit {
   public cuerpo: any[];
 
 
-  public columnas: string[] = ['id','nombre', 'actions'];
+  public columnas: string[] = ['nombre', 'actions'];
   readonly width: string = '300px';
   public snackBar: MatSnackBar;
 
