@@ -4,7 +4,7 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a routerLink="/home/dashboard">Principal</a></li>
-                <li class="breadcrumb-item active">Clientes</li>
+                <li class="breadcrumb-item active">Reportes de ventas</li>
             </ol>
         </nav>
     </div>
@@ -14,7 +14,6 @@
                 <br>
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="card-title">Gestion de Clientes</h2>
 
                         <!-- Agregar html aca -->
 
@@ -27,22 +26,20 @@
                                     <th mat-header-cell *matHeaderCellDef> # </th>
                                     <td mat-cell *matCellDef="let element">{{element.id}}</td>
                                 </ng-container>
-
+                        
                                 <ng-container matColumnDef="nombre">
                                     <th mat-header-cell *matHeaderCellDef> Nombre </th>
                                     <td mat-cell *matCellDef="let element">{{element.nombre}}</td>
                                 </ng-container>
-
+                        
                                 <ng-container matColumnDef="actions">
                                     <th mat-header-cell *matHeaderCellDef> Acciones </th>
                                     <td mat-cell *matCellDef="let element">
-                                        <button mat-raised-button color="basic"
-                                            (click)="openEdit(element)">Editar</button>
-                                        <button mat-raised-button color="warn"
-                                            (click)="deleteCliente(element)">Eliminar</button>
+                                        <button mat-raised-button color="basic" (click)="openEdit(element)">Editar</button>
+                                        <button mat-raised-button color="warn" (click)="deleteCliente(element)">Eliminar</button>
                                     </td>
                                 </ng-container>
-
+                                
                                 <tr mat-header-row *matHeaderRowDef="columnas"></tr>
                                 <tr mat-row *matRowDef="let row; columns: columnas"></tr>
                             </table>
@@ -56,3 +53,5 @@
         </div>
     </section>
 </main>
+
+

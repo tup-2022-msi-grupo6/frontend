@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClienteComponent } from './cliente/cliente.component';
 import { HomeComponent } from './home/home.component';
 
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './security/auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReporteVentasComponent } from './reportes/reporte-ventas/reporte-ventas.component';
 import { CantidadesComponent } from './reportes/reporte-ventas/cantidades/cantidades.component';
@@ -17,7 +19,8 @@ const routes: Routes = [
       {path: 'cantidad', component: CantidadesComponent , canActivate: [AuthGuard]  },
       {path: 'precios', component: PreciosComponent , canActivate: [AuthGuard]  },
     ],canActivate: [AuthGuard]  },
-  ], canActivate: [AuthGuard] }
+  ], canActivate: [AuthGuard] },
+  {path: 'login', component: LoginComponent}
 
 ];
 
