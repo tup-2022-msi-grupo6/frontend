@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from "@angular/material/datepicker";
 import { DialogClienteComponent } from './cliente/dialog/dialogCliente.component';
 
 import { HomeComponent } from './home/home.component';
@@ -16,7 +17,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -25,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ClienteComponent,
     DialogClienteComponent
+
   ],
   imports: [
     BrowserModule,
@@ -36,11 +40,14 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatButtonModule,
     MatInputModule,
+    MatDatepickerModule,
     MatSnackBarModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
