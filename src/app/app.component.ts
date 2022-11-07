@@ -1,5 +1,8 @@
-import { Component ,ElementRef} from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Usuario } from './models/usuario';
+import { ApiAuthService } from './services/apiauth.service';
+
 
 @Component({
   selector: 'app-root',

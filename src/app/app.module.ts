@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { DialogClienteComponent } from './cliente/dialog/dialogCliente.component';
+import { DialogStockComponent } from './stock/dialog/dialogStock.component';
 
 import { DialogDeleteComponent } from './common/delete/dialogDelete.component';
 import { MatCardModule} from '@angular/material/card';
@@ -18,12 +19,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from '@angular/material/core';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './security/jwt.interceptor';
+
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './layouts/footer/footer.component';
@@ -37,6 +41,12 @@ import { PieTopSellersYComponent } from './reportes/reporte-ventas/precios/pie-t
 
 import { VentasService } from './services/reportesServices/ventas.service';
 import { NgChartsModule } from "ng2-charts";
+
+import { StockComponent } from './stock/stock.component';
+
+import { VentaComponent } from './venta/venta.component';
+import { DialogVentaComponent } from './venta/dialog/dialogVenta.component';
+
 
 
 @NgModule({
@@ -56,6 +66,14 @@ import { NgChartsModule } from "ng2-charts";
     PreciosComponent,
     PieTopSellersComponent,
     PieTopSellersYComponent
+    DialogStockComponent,
+    LoginComponent,
+    StockComponent,
+    DialogVentaComponent,
+    VentaComponent
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -71,13 +89,16 @@ import { NgChartsModule } from "ng2-charts";
     MatFormFieldModule,
     MatCardModule,
     FormsModule,
+
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
     NgChartsModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, VentasService
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, VentasService,
+
+    ReactiveFormsModule
   ],
 
   bootstrap: [AppComponent]

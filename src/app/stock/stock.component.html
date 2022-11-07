@@ -1,0 +1,67 @@
+<div class="btn-margen">
+    <button mat-raised-button color="primary" (click)="openAdd()">Nuevo</button>
+</div>
+<div>
+    <table mat-table [dataSource]="lst" class="mat-elevation-z4">
+        <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef> # </th>
+            <td mat-cell *matCellDef="let element">{{element.codigo}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="tipo_producto">
+            <th mat-header-cell *matHeaderCellDef> Producto </th>
+            <td mat-cell *matCellDef="let element">{{element.tipoProducto}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="descripcion">
+            <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+            <td mat-cell *matCellDef="let element">{{element.descripcion}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="id_tipo_pintura">
+            <th mat-header-cell *matHeaderCellDef> Tipo Pintura </th>
+            <td mat-cell *matCellDef="let element">{{element.idTipoPintura}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="id_marca">
+            <th mat-header-cell *matHeaderCellDef> Marca </th>
+            <td mat-cell *matCellDef="let element">{{element.idMarca}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="id_color">
+            <th mat-header-cell *matHeaderCellDef> Color </th>
+            <td mat-cell *matCellDef="let element">{{element.idColor}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="acabado">
+            <th mat-header-cell *matHeaderCellDef> Acabado </th>
+            <td mat-cell *matCellDef="let element">{{element.acabado}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="tamano">
+            <th mat-header-cell *matHeaderCellDef> Tamaño </th>
+            <td mat-cell *matCellDef="let element">{{element.tamano}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="precio">
+            <th mat-header-cell *matHeaderCellDef> Precio </th>
+            <td mat-cell *matCellDef="let element">{{element.precio}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="id_sector">
+            <th mat-header-cell *matHeaderCellDef> Sector </th>
+            <td mat-cell *matCellDef="let element">{{element.idSector}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-raised-button color="basic" (click)="openEdit(element)">Editar</button>
+                <button mat-raised-button color="warn" class="margen-options" (click)="deleteProducto(element)">Eliminar</button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnas"></tr>
+    </table>
+</div>

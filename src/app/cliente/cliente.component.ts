@@ -8,6 +8,8 @@ import { Cliente } from '../models/cliente';
 import { DialogDeleteComponent } from '../common/delete/dialogDelete.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import { ImpresionService } from '../services/impresion.service';
+
 
 @Component({
   selector: 'app-cliente',
@@ -17,6 +19,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ClienteComponent implements OnInit {
 
   public lst: any[];
+  public cuerpo: any[];
+
 
   public columnas: string[] = ['id','nombre', 'actions'];
   readonly width: string = '300px';
@@ -25,7 +29,8 @@ export class ClienteComponent implements OnInit {
 
   constructor(
     private apiCliente: ApiclienteService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private impresionService: ImpresionService
   ) {
     
    }
@@ -46,6 +51,7 @@ export class ClienteComponent implements OnInit {
 
       width : this.width
 
+
     })
     dialogRef.afterClosed().subscribe(result => {
       this.getClientes();
@@ -63,6 +69,7 @@ export class ClienteComponent implements OnInit {
     });
   }
 
+
   deleteCliente(cliente: Cliente) {
     const dialogRef = this.dialog.open(DialogDeleteComponent, {
       width : this.width
@@ -76,5 +83,22 @@ export class ClienteComponent implements OnInit {
         })
       }
     });
+  }
+
+  onImprimir() {
+    const encabezado = ['Id', 'Nombre'];
+    
+    this.apiCliente.getAllClientes().subscribe( async response => {
+      const cuerpo = Object(response)['data']?.map(
+        (object : any) => {
+          const data = [
+            object.idCliente,
+            object.nombre
+          ]
+          return data;
+        }
+      )
+      this.impresionService.imprimir(encabezado, cuerpo, "Listado de clientes");
+    })
   }
 }
