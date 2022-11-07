@@ -1,10 +1,10 @@
 <div class="row justify-content-center text-center">
 
     <div class="col-md-4">
-        <div class="card">
-            <div class="card-body pt-4">
+        <div class="card card-color">
+            <div class="card-body pt-4 text-white">
 
-                Ventas del <b>DIA</b>
+                Ingresos de <b>Hoy</b>
                 <b class="numeros">${{cantidadHoy.dia}}</b>
 
             </div>
@@ -13,10 +13,10 @@
     </div>
 
     <div class="col-md-4">
-        <div class="card">
-            <div class="card-body pt-4">
+        <div class="card card-color">
+            <div class="card-body pt-4 text-white">
 
-                Ventas del <b>MES</b>
+                Ingresos de <b>{{mesHoy}} {{hoy.getFullYear()}}</b>
                 <b class="numeros">${{cantidadHoy.mes}}</b>
 
             </div>
@@ -25,10 +25,10 @@
     </div>
 
     <div class="col-md-4">
-        <div class="card">
-            <div class="card-body pt-4">
+        <div class="card card-color">
+            <div class="card-body pt-4 text-white">
 
-                Ventas del <b>AÑO</b>
+                Ingresos del <b>{{hoy.getFullYear()}}</b>
                 <b class="numeros">${{cantidadHoy.anio}}</b>
 
             </div>
@@ -63,11 +63,23 @@
 
         <div class="row">
 
-            <div class="col-md-6 text-center">
+            <div class="col-md-4 text-center">
                 <div class="card">
-                    <div class="card-body pt-4">
+                    <div class="card-body py-4">
         
-                        Ventas del <b>MES</b>
+                        Ingresos <b>{{fecha.dia}} {{mes}} {{fecha.anio}}</b>
+                        <b class="numeros">${{cantidad.dia}}</b>
+        
+                    </div>
+                </div>
+        
+            </div>
+
+            <div class="col-md-4 text-center">
+                <div class="card">
+                    <div class="card-body py-4">
+        
+                        Ingresos <b>{{mes}} {{fecha.anio}}</b>
                         <b class="numeros">${{cantidad.mes}}</b>
         
                     </div>
@@ -75,11 +87,11 @@
         
             </div>
 
-            <div class="col-md-6 text-center">
+            <div class="col-md-4 text-center">
                 <div class="card">
-                    <div class="card-body pt-4">
+                    <div class="card-body py-4">
 
-                        Ventas del <b>AÑO</b>
+                        Ingresos totales del <b>{{fecha.anio}}</b>
                         <b class="numeros">${{cantidad.anio}}</b>
 
                     </div>
@@ -93,7 +105,7 @@
 
             <div class="col-md-6 text-center">
                 <div class="card">
-                    <div class="card-body pt-4">
+                    <div class="card-body py-4">
         
                         <app-pie-top-sellers [meses]=meses [fecha]=fecha></app-pie-top-sellers>
         
@@ -104,7 +116,7 @@
 
             <div class="col-md-6 text-center">
                 <div class="card">
-                    <div class="card-body pt-4">
+                    <div class="card-body py-4">
         
                         <app-pie-top-sellers-y [fecha]=fecha></app-pie-top-sellers-y>
         
@@ -123,10 +135,14 @@
 
     <div class="col-md-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body py-4">
 
-                <canvas baseChart [data]="datos" [type]="'bar'" [options]="opciones">
-                </canvas>
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <canvas baseChart [data]="datos" [type]="'bar'" [options]="opciones">
+                        </canvas>
+                    </div>
+                </div>
 
             </div>
         </div>

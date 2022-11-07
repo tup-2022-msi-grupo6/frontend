@@ -31,6 +31,8 @@ export class PreciosComponent implements OnInit, OnDestroy {
 
   meses: string[] = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
+  mesHoy: String = ''
+
   mes: String = ''
 
   ingresos = new Array<number>(12)
@@ -40,6 +42,10 @@ export class PreciosComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     this.obtenerDiaHoy()
+
+    this.obtenerMesActual()
+
+    this.obtenerMes()
 
     setTimeout(() => {
 
@@ -54,6 +60,17 @@ export class PreciosComponent implements OnInit, OnDestroy {
 
     }, 200)
 
+  }
+
+  obtenerMesActual() {
+
+    for (let i = 0; i < this.meses.length; i++) {
+
+      if ((i + 1) == this.hoy.getMonth()) {
+        this.mesHoy = this.meses[i+1]
+      }
+
+    }
   }
 
   obtenerMes() {
@@ -100,6 +117,8 @@ export class PreciosComponent implements OnInit, OnDestroy {
     this.fecha.dia = this.selected.getDate();
     this.fecha.mes = this.selected.getMonth() + 1;
     this.fecha.anio = this.selected.getFullYear();
+
+    this.obtenerMes()
   }
 
   cargarTotalIASeleccionado() {

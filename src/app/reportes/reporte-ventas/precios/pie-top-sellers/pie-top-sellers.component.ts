@@ -95,7 +95,7 @@ export class PieTopSellersComponent implements OnInit, OnDestroy {
         this.opciones = {
           responsive: true,
           plugins: {
-            title: { text: 'Top vendedores ' + mes, display: true, font: { size: 20 }, fullSize: true }
+            title: { text: 'Top vendedores ' + mes + ' ' + this.fecha.anio, display: true, font: { size: 20 }, fullSize: true }
           }
         }
 

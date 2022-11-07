@@ -37,6 +37,18 @@ h6 {
 	margin-bottom: 14px;
 }
 
+.card-color{
+	background-color: #3f51b5;
+}
+
+.card-color-sec{
+	background-color: #e6e6e6;
+}
+
+.text-card{
+	color: white;
+}
+
 /*--------------------------------------------------------------
   # Main
   --------------------------------------------------------------*/
