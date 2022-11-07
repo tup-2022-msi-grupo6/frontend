@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { DialogClienteComponent } from './cliente/dialog/dialogCliente.component';
+import { DialogStockComponent } from './stock/dialog/dialogStock.component';
 
 import { DialogDeleteComponent } from './common/delete/dialogDelete.component';
 import { MatCardModule} from '@angular/material/card';
@@ -22,6 +23,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './security/jwt.interceptor';
+
+import { StockComponent } from './stock/stock.component';
+
 import { VentaComponent } from './venta/venta.component';
 import { DialogVentaComponent } from './venta/dialog/dialogVenta.component';
 
@@ -34,9 +38,12 @@ import { DialogVentaComponent } from './venta/dialog/dialogVenta.component';
     ClienteComponent,
     DialogClienteComponent,
     DialogDeleteComponent,
-    DialogVentaComponent,
+    DialogStockComponent,
     LoginComponent,
+    StockComponent
+    DialogVentaComponent,
     VentaComponent
+
 
   ],
   imports: [
