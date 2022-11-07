@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogStockComponent } from './dialog/dialogStock.component';
 import { DialogDeleteComponent } from '../common/delete/dialogDelete.component';
+import { ImpresionService } from '../services/impresion.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class StockComponent implements OnInit {
   public columnas: string[] = ['codigo','tipo_producto', 'descripcion', 'id_tipo_pintura', 'id_marca', 'id_color', 'acabado', 'tamano', 'precio', 'id_sector' ,'actions'];
   public snackbar: MatSnackBar;
 
-  constructor(private stockService : ApistockService,  public dialog: MatDialog) { }
+  constructor(private stockService : ApistockService,  public dialog: MatDialog, private impresionService : ImpresionService ) { }
 
   ngOnInit(): void {
     this.getProductos();
@@ -67,6 +68,31 @@ export class StockComponent implements OnInit {
     });
   }
 
+  onImprimir() {
+    const encabezado = ['Id', 'Producto', 'Descripcion', 'Tipo Pintura', 'Marca', 'Color', 'Acabado', 'Tamaño', 'Precio', 'Sector'];
+
+    this.stockService.getAllProductos().subscribe( async response => {
+      const cuerpo = Object(response)['data']?.map(
+        (object : any) => {
+          const data = [
+            object.codigo,
+            object.tipoProducto,
+            object.descripcion,
+            object.idTipoPintura,
+            object.idMarca,
+            object.idColor,
+            object.acabado,
+            object.tamano,
+            object.precio,
+            object.idSector
+
+          ]
+          return data;
+        }
+      )
+      this.impresionService.imprimir(encabezado, cuerpo, "Listado de Stock");
+    })
+  }
 
 
 }

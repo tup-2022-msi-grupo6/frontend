@@ -4,6 +4,13 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
+.btn-outline-primary{
+  border-color: #3f51b5 !important;
+}
+
+.btn-outline-primary:hover{
+  background-color: #3f51b5;
+}
 .btn-primary,
 .btn-primary.disabled,
 .btn-primary:hover,
@@ -13,3 +20,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: #3f51b5;
     border-color: #3f51b5;
 }
+
