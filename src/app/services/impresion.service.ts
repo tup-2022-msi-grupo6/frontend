@@ -24,6 +24,6 @@ export class ImpresionService {
     })
 
     console.log(cuerpo)
-    doc.save('listadoClientes.pdf')
+    doc.save('listado.pdf')
   }
 }
