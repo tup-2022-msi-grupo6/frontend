@@ -40,7 +40,7 @@ import { DialogVentaComponent } from './venta/dialog/dialogVenta.component';
     DialogDeleteComponent,
     DialogStockComponent,
     LoginComponent,
-    StockComponent
+    StockComponent,
     DialogVentaComponent,
     VentaComponent
 
