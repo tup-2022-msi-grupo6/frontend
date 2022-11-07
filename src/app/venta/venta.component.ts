@@ -14,7 +14,7 @@ import { DialogVentaComponent } from './dialog/dialogVenta.component';
 })
 export class VentaComponent implements OnInit {
   readonly width: string = '600px';
-  public columnas: string[] = ['id','id_cliente', 'fecha_venta', 'precio','descripcion', 'actions'];
+  public columnas: string[] = ['id','id_cliente', 'fecha_venta','idFormaPago', 'precio','descripcion', 'actions'];
   public lst: any[];
   public cuerpo: any[];
 
