@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.apiauthService.login(this.loginForm.value as Login).subscribe((response) => {
       if (response.exito === 1) {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home/dashboard']);
       }
     });
   }
