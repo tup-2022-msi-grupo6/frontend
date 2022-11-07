@@ -65,15 +65,12 @@ import { DialogVentaComponent } from './venta/dialog/dialogVenta.component';
     CantidadesComponent,
     PreciosComponent,
     PieTopSellersComponent,
-    PieTopSellersYComponent
+    PieTopSellersYComponent,
     DialogStockComponent,
     LoginComponent,
     StockComponent,
     DialogVentaComponent,
     VentaComponent
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -89,7 +86,6 @@ import { DialogVentaComponent } from './venta/dialog/dialogVenta.component';
     MatFormFieldModule,
     MatCardModule,
     FormsModule,
-
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
