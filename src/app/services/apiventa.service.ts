@@ -23,4 +23,13 @@ export class ApiventaService {
     console.log(venta);
     return this._http.post<Response>(this.url, venta, httpOption)
   }
+
+  eliminar (nroFac: number) : Observable<Response> {
+    console.log(nroFac)
+    return this._http.delete<Response>(`${this.url}/${nroFac}`);
+  }
+
+  getAllVentas() : Observable<Response> {
+    return this._http.get<Response>(this.url);
+  }
 }

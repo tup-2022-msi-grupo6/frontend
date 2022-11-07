@@ -27,7 +27,7 @@ export class DialogVentaComponent {
 
     constructor(public dialogRef: MatDialogRef<DialogVentaComponent>, public snackBar: MatSnackBar, private formBuilder: FormBuilder, public apiVenta: ApiventaService) {
         this.detalle_venta = [];
-        this.venta = {id_cliente: 1, detalle_venta: []};
+        this.venta = {id_cliente: 1,nroFac: 0, detalle_venta: []};
     }
 
     close() {

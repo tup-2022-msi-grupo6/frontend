@@ -8,9 +8,7 @@ import { Cliente } from '../models/cliente';
 import { DialogDeleteComponent } from '../common/delete/dialogDelete.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ImpresionService } from '../services/impresion.service';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
-import autoTable from 'jspdf-autotable';
+
 
 
 @Component({
