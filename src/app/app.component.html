@@ -11,7 +11,9 @@
 
 
              <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLink="ventas">
+
+               <a class="nav-link dropdown-toggle" routerLink="venta" routerLinkActive="active"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                  Ventas
                </a>
                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -49,6 +51,12 @@
                   <a class="dropdown-item" href="#">Reportes de Stock</a>
                   <a class="dropdown-item" href="#">Reportes de Clientes</a>
                </div>
+             </li>
+
+             <li class="nav-item">
+               <a class="nav-link" *ngIf="usuario" (click)="logout()" id="navbarDropdown" role="button"  aria-haspopup="true" aria-expanded="false">
+                 Cerrar sesión
+               </a>
              </li>
 
 
